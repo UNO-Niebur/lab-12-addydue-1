@@ -1,22 +1,28 @@
 # SearchSortLab.py
-# Name:
-# Date:
+# Name:Addy Duering
+# Date:4/26/26
 # Assignment: Lab 13 – Searching and Sorting
 
 
 def linearSearch(data, target):
     """Return the index of target if found, otherwise return -1."""
-    
-    # TODO: implement linear search
-    
+    for index, value in enumerate(data):
+        if value == target:
+            return index
     return -1
 
 
 def bubbleSort(data):
     """Sort the list using bubble sort and return the sorted list."""
-    
-    # TODO: implement bubble sort
-    
+    n = len(data)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if data[j] > data[j + 1]:
+                data[j], data[j + 1] = data[j + 1], data[j]
+                swapped = True
+        if not swapped:
+            break
     return data
 
 
@@ -27,7 +33,7 @@ def main():
     randomList = [3, 1, 4, 2, 5]
 
     # Test linear search
-    print("Search for 4 in randomList:", linearSearch(randomList, 4))
+    print("Search for 4 in randomList:", linearSearch(randomList, 3))
     print("Search for 10 in randomList:", linearSearch(randomList, 10))
 
     # Test sorting
@@ -38,3 +44,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#Reflection Questions:
+#1.The sorted list was already in order, so it was the easiest to sort.
+#2.The reversed list was the hardest to sort because it was in the exact opposite order.
+#3.Sorting is useful before searching because it standardizes the data, so searching makes more sense.
+#4.Linear search would still be useful if you are trying to find an item in a specific position.
